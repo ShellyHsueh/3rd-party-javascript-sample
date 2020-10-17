@@ -1,0 +1,15 @@
+{
+  "name": "3rd-party-sample",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "ShellyHsueh",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "express": "^4.17.1",
+    "vhost": "^3.0.2"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}

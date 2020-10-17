@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Page</title>
+</head>
+<body>
+  <h4>3rd-Party Script Test Page</h4>
+
+  <!-- widget-insertion targets -->
+  <div data-widget-type="productList" data-product-type="ACCESSORIES"></div>
+  <div data-widget-type="productDetail" data-product-id="001"></div>
+  <div data-widget-type></div>
+
+  <!-- async load third-party script & initialize it once loaded -->
+  <script>
+    (function(d) {
+      const script = d.createElement('script')
+      script.async = true
+      script.src = `http://3rd-party-app.com:3000/sdk.js`
+
+      script.onload = function() {
+        SH_WIDGET.init(() => console.log('widget initialized'))
+      }
+
+      const entry = d.getElementsByTagName('script')[0]
+      entry.parentNode.appendChild(script)
+    })(document)
+  </script>
+</body>
+</html>
